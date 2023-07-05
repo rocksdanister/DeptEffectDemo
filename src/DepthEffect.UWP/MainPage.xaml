@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="DepthEffect.UWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:canvas="using:Microsoft.Graphics.Canvas.UI.Xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:DepthEffect.UWP"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Unloaded="Page_Unloaded"
+    mc:Ignorable="d">
+
+    <Grid x:Name="mainGrid">
+        <canvas:CanvasAnimatedControl
+            x:Name="canvasControl"
+            CreateResources="CanvasControl_CreateResources"
+            Draw="CanvasControl_Draw"
+            PointerExited="CanvasControl_PointerExited"
+            PointerMoved="CanvasControl_PointerMoved"
+            Update="CanvasControl_Update" />
+    </Grid>
+</Page>

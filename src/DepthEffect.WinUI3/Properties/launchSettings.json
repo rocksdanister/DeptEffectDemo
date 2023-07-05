@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DepthEffect.WinUI3 (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "DepthEffect.WinUI3 (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
