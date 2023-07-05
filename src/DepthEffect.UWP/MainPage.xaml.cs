@@ -69,9 +69,6 @@ namespace DepthEffect.UWP
         {
             var size = sender.Size.ToVector2();
 
-            depthEffect.Properties["screenResolution"] = new Vector2(size.X, size.Y);
-            depthEffect.Properties["texResolution"] = new Vector2(imageSize.X, imageSize.Y);
-
             mouseOffset.X += (mousePos.X - mouseOffset.X) * 0.08f;
             mouseOffset.Y += (mousePos.Y - mouseOffset.Y) * 0.08f;
             depthEffect.Properties["mouse"] = new Vector2(mouseOffset.X, mouseOffset.Y);
@@ -83,6 +80,7 @@ namespace DepthEffect.UWP
             float textureAspect = imageSize.X / imageSize.Y;
             var scale = textureAspect > screenAspect ? new Vector2(size.Y / imageSize.Y + 0.25f) : new Vector2(size.X / imageSize.X + 0.25f);
             args.DrawingSession.Transform = Matrix3x2.CreateScale(scale);
+
             // Center the output
             var offset = (size - imageSize * scale) / 2;
             args.DrawingSession.DrawImage(depthEffect, offset);

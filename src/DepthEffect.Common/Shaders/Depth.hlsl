@@ -8,8 +8,6 @@
 
 float2 mouse = {0, 0};
 float2 intensity = { 1, 1 };
-float2 screenResolution = {1, 1};
-float2 texResolution = {1, 1};
 
 D2D_PS_ENTRY(main)
 {
