@@ -1,2 +1,5 @@
 # DeptEffectDemo
-3D Parallax effect using depth map (Win2D/ComputeSharp)
+Win2D parallax 3D effect using depth map sample project
+
+Discussion:
+https://github.com/CommunityToolkit/Labs-Windows/discussions/458
