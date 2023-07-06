@@ -69,8 +69,8 @@ namespace DepthEffect.UWP
         {
             var size = sender.Size.ToVector2();
 
-            mouseOffset.X += (mousePos.X - mouseOffset.X) * 0.08f;
-            mouseOffset.Y += (mousePos.Y - mouseOffset.Y) * 0.08f;
+            mouseOffset.X += (-0.075f * mousePos.X - mouseOffset.X) * 0.08f;
+            mouseOffset.Y += (-0.075f * mousePos.Y - mouseOffset.Y) * 0.08f;
             depthEffect.Properties["mouse"] = new Vector2(mouseOffset.X, mouseOffset.Y);
             depthEffect.Properties["intensity"] = new Vector2(0.75f, 1f);
 
@@ -90,8 +90,8 @@ namespace DepthEffect.UWP
         private void CanvasControl_PointerMoved(object sender, PointerRoutedEventArgs e)
         {
             var point = e.GetCurrentPoint(mainGrid);
-            mousePos.X = (float)(point.Position.X) * -0.075f;
-            mousePos.Y = (float)(point.Position.Y) * -0.075f;
+            mousePos.X = (float)(point.Position.X);
+            mousePos.Y = (float)(point.Position.Y);
         }
 
         private void CanvasControl_PointerExited(object sender, PointerRoutedEventArgs e)

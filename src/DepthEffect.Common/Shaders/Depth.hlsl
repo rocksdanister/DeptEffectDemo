@@ -7,7 +7,7 @@
 #include "d2d1effecthelpers.hlsli"
 
 float2 mouse = {0, 0};
-float2 intensity = { 1, 1 };
+float2 intensity = {1, 1};
 
 D2D_PS_ENTRY(main)
 {
