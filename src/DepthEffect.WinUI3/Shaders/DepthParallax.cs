@@ -1,7 +1,6 @@
 ﻿using ComputeSharp;
-using System.Numerics;
 
-namespace ComputeSharpTest.Shaders;
+namespace DepthEffect.WinUI3.Shaders;
 
 [AutoConstructor]
 [EmbeddedBytecode(DispatchAxis.XY)]
