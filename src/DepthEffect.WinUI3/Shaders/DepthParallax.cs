@@ -21,6 +21,16 @@ internal readonly partial struct DepthParallax : IPixelShader<float4>
         float2 uv = fragCoord / DispatchSize.XY;
         uv.Y = 1.0f - uv.Y;
 
+        // Fill scale
+        float screenAspect = (float)DispatchSize.X / DispatchSize.Y;
+        float textureAspect = (float)imageTexture.Width / imageTexture.Height;
+        float scaleX = 1f, scaleY = 1f;
+        if (textureAspect > screenAspect)
+            scaleX = screenAspect / textureAspect;
+        else
+            scaleY = textureAspect / screenAspect;
+        uv = new Float2(scaleX, scaleY) * (uv - 0.5f) + 0.5f;
+
         float depth = depthTexture.Sample(uv).R;
         Float2 parallax = mouse * depth * intensity;
 
